@@ -1,11 +1,10 @@
 import express from "express";
 const router = express.Router();
-import  {User} from '../models/User'; // Assuming you have a User model
+import  {User} from '../models/User';
 import bcrypt from 'bcryptjs';
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 
-// POST route to initiate password reset
 router.post('/forgot-password', async (req, res) => {
     const { email } = req.body;
     const user = await User.findOne({ email });
@@ -45,7 +44,6 @@ router.post('/forgot-password', async (req, res) => {
     });
 });
 
-// POST route to reset password
 router.post('/reset-password/:token', async (req, res) => {
     const user = await User.findOne({
         resetPasswordToken: req.params.token,
