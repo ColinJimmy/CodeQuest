@@ -33,7 +33,7 @@ const ForgotPassword = () => {
                         required
                     />
                     <button type="submit" className="forgot-password-button">
-                        Reset Password
+                        RESET PASSWORD
                     </button>
                 </form>
                 {message && <p className="forgot-password-message">{message}</p>}

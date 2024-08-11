@@ -1,6 +1,6 @@
 import express from "express";
 const router = express.Router();
-import  {User} from '../models/User';
+import  User from '../models/User';
 import bcrypt from 'bcryptjs';
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
