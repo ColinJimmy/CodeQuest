@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import "./Auth.css"
 import icon from '../../assets/icon.png'
 import Aboutauth from './Aboutauth'
@@ -60,9 +60,11 @@ const Auth = () => {
                         <div style={{ display: "flex", justifyContent: "space-between" }}>
                             <h4>Password</h4>
                             {!issignup && (
-                                <p style={{ color: "#007ac6", fontSize: "13px" }}>
+                                <Link to='/forgot-password'>
+                                    <p style={{ color: "#007ac6", fontSize: "13px" }}>
                                     Forgot Password?
-                                </p>
+                                    </p>
+                                </Link>
                             )}
                         </div>
                         <input type="password" name="password" id="password" value={password} onChange={(e) => {
